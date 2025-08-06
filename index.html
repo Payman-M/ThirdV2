@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restricted Nodes Map</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        #controls {
+            width: 250px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #controls label,
+        #controls input,
+        #controls button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #map {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="controls">
+        <label for="MaxDistance">Max Distance (m):</label>
+        <input type="number" id="max_Distance" name="max_Distance" placeholder="Max Distance" />
+        <label for="nearst Coord Distance">Nearst Coord Distance (m):</label>
+        <input type="number" id="nearest_Coord" name="nearest_Coord" placeholder="Nearest Coord" />
+        <label for="max_Edge">Max Edge Polygon Draw Distance (m):</label>
+        <input type="number" id="max_Edge" name="max_Edge" placeholder="Max Edge" />
+        <button id="pressButton">Press</button>
+        <button id="saveCSV">Save CSV</button>
+    </div>
+
+    <div id="map"></div>
+    
+    <!-- Load Mapbox GL JS, Turf.js, and Graphlib from CDNs -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/graphlib@2.1.8/dist/graphlib.min.js"></script>
+    
+    <!-- Your custom scripts (must come after libraries) -->
+    <!-- <script src="js/dijkstra.js"></script> -->
+     <!-- <script src="js/minHeap.js"></script> -->
+    <!-- <script src="js/myDijkstra.js"></script> -->
+    <script  src="js/map.js"></script>
+
+    <!-- <script src="js/map.js"></script> -->
+</body>
+</html>
